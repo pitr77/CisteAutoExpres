@@ -1,0 +1,27 @@
+{
+  "name": "cisteautoexpres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pitr77/CisteAutoExpres.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/pitr77/CisteAutoExpres/issues"
+  },
+  "homepage": "https://github.com/pitr77/CisteAutoExpres#readme",
+  "devDependencies": {
+    "vite": "^7.3.0"
+  },
+  "private": true
+}
