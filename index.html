@@ -3,11 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One Page</title>
+    <title>Tvoja značka – One Page</title>
+    <meta name="description" content="Jednostránkový web – prezentácia služieb a kontakt." />
   </head>
+
   <body>
-    <h1>Funguje to ✅</h1>
-    <p>Beží Vite dev server.</p>
+    <header class="nav" id="top">
+      <a class="brand" href="#top" aria-label="Domov">
+        <span class="brandMark" aria-hidden="true"></span>
+        <span class="brandName">Tvoja značka</span>
+      </a>
+
+      <nav class="menu" aria-label="Navigácia">
+        <a href="#sluzby">Služby</a>
+        <a href="#praca">Ako pracujem</a>
+        <a href="#referencie">Referencie</a>
+        <a href="#kontakt" class="btn btnSmall">Kontakt</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Otvoriť menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container heroGrid">
+          <div>
+            <p class="kicker">Služby • Bratislava a okolie</p>
+            <h1>Jednoduchý, čistý web, ktorý predáva.</h1>
+            <p class="lead">
+              Krátky popis (1–2 vety). Čo robíte, pre koho a čím ste iní.
+            </p>
+
+            <div class="heroCtas">
+              <a class="btn" href="#kontakt">Napísať / Zavolať</a>
+              <a class="btn btnGhost" href="#sluzby">Pozrieť služby</a>
+            </div>
+
+            <ul class="heroBadges" aria-label="Rýchle benefity">
+              <li>Rýchla reakcia</li>
+              <li>Férová cena</li>
+              <li>Čistá práca</li>
+            </ul>
+          </div>
+
+          <aside class="heroCard" aria-label="Kontakt karta">
+            <div class="cardTop">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <p class="cardName">Meno Priezvisko</p>
+                <p class="cardRole">Pozícia / služby</p>
+              </div>
+            </div>
+
+            <div class="cardLines">
+              <a href="tel:+421900000000">+421 900 000 000</a>
+              <a href="mailto:hello@tvojadomena.sk">hello@tvojadomena.sk</a>
+              <span>Bratislava</span>
+            </div>
+
+            <div class="cardActions">
+              <a class="btn btnSmall" href="#kontakt">Dohodnúť termín</a>
+              <a class="btn btnSmall btnGhost" href="#referencie">Ukážky</a>
+            </div>
+
+            <p class="muted small">
+              *Sem dáme neskôr logo/fotku, prípadne QR (voliteľné).
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SLUŽBY -->
+      <section id="sluzby" class="section">
+        <div class="container">
+          <div class="sectionHead">
+            <h2>Služby</h2>
+            <p class="muted">3–6 položiek. Krátke a konkrétne.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Inštalácie</h3>
+              <p>Byty, domy, menšie prevádzky. Rýchlo a bezpečne.</p>
+            </article>
+            <article class="card">
+              <h3>Opravy</h3>
+              <p>Diagnostika, výmena prvkov, riešenie problémov.</p>
+            </article>
+            <article class="card">
+              <h3>Konzultácie</h3>
+              <p>Odporúčania, návrh riešenia, dokumentácia.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- AKO PRACUJEM -->
+      <section id="praca" class="section sectionAlt">
+        <div class="container">
+          <div class="sectionHead">
+            <h2>Ako pracujem</h2>
+            <p class="muted">Jasný proces = dôvera a menej stresu.</p>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <span class="stepNum">1</span>
+              <div>
+                <h3>Kontakt</h3>
+                <p>Krátko popíšeš požiadavku a termín.</p>
+              </div>
+            </li>
+            <li>
+              <span class="stepNum">2</span>
+              <div>
+                <h3>Návrh a cena</h3>
+                <p>Dohodneme rozsah a odhad. Bez prekvapení.</p>
+              </div>
+            </li>
+            <li>
+              <span class="stepNum">3</span>
+              <div>
+                <h3>Realizácia</h3>
+                <p>Termín, čistá práca, odovzdanie a podpora.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- REFERENCIE -->
+      <section id="referencie" class="section">
+        <div class="container">
+          <div class="sectionHead">
+            <h2>Referencie</h2>
+            <p class="muted">2–4 krátke citácie alebo ukážky.</p>
+          </div>
+
+          <div class="quotes">
+            <figure class="quote">
+              <blockquote>„Rýchlo, profesionálne, odporúčam.“</blockquote>
+              <figcaption>— Klient, Bratislava</figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>„Presne podľa dohody, čistá práca.“</blockquote>
+              <figcaption>— Klient, Senec</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt" class="section sectionAlt">
+        <div class="container contactGrid">
+          <div>
+            <h2>Kontakt</h2>
+            <p class="muted">
+              Najrýchlejšie je zavolať. Alebo pošli správu – ozvem sa čo najskôr.
+            </p>
+
+            <div class="contactLines">
+              <a class="contactLine" href="tel:+421900000000">
+                <span>Telefón</span><strong>+421 900 000 000</strong>
+              </a>
+              <a class="contactLine" href="mailto:hello@tvojadomena.sk">
+                <span>Email</span><strong>hello@tvojadomena.sk</strong>
+              </a>
+              <div class="contactLine">
+                <span>Mesto</span><strong>Bratislava</strong>
+              </div>
+            </div>
+          </div>
+
+          <form class="form" id="contactForm">
+            <label>
+              Meno
+              <input name="name" placeholder="Tvoje meno" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="tvoj@email.sk" required />
+            </label>
+            <label>
+              Správa
+              <textarea name="message" rows="5" placeholder="Čo potrebuješ?" required></textarea>
+            </label>
+            <button class="btn" type="submit">Odoslať</button>
+            <p class="muted small" id="formHint">
+              *Zatiaľ to otvorí tvoj email klient (bez backendu).
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footerGrid">
+        <span class="muted small">© <span id="year"></span> Tvoja značka</span>
+        <span class="muted small">One-page • rýchly • responzívny</span>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>
