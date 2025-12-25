@@ -122,6 +122,217 @@
 .cae-footer-links a:hover{color:#fff; opacity:1;} 
 .cae-footer-copy{margin-top:8px; opacity:.75;}
 
+
+/* CAE fix – "Objednať" button v header nav (posun ikony + väčší pill) */
+.header-area .main-nav .nav li:last-child a {
+  display: inline-flex;
+  align-items: center;
+  /* trochu viac priestoru, nech nič nevybieha */
+  min-height: 44px;
+  line-height: 44px;
+  padding-right: 50px; /* môžeš dať 20-24 ak chceš širšie */
+}
+
+/* oranžový kruh s ikonou */
+.header-area .main-nav .nav li:last-child a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+
+  /* zrušíme problémové posuny */
+  margin-left: 0;
+  margin-right: 10px;
+
+  /* jemný posun hore, ak ešte stále vizuálne “padá” */
+  position: relative;
+  top: -1px;
+
+  border-radius: 50%;
+}
+/*
+---------------------------------------------------------------------------------------
+-- PETOVE UPRAVY
+---------------------------------------------------------------------------------------
+*/
+
+/* CAE: header menu vertikálne do stredu (iba index header .cae-header) */
+header.cae-header .main-nav {
+  height: 100px;              /* držíme sa template výšky */
+  display: flex;
+  align-items: center;        /* vertikálne centrovanie v bielom páse */
+}
+
+header.cae-header .main-nav ul.nav {
+  margin-top: 0 !important;   /* zruší template posun o 30px dole */
+  flex-basis: auto;           /* nech to neťahá do zvláštneho layoutu */
+  display: flex;
+  align-items: center;        /* položky menu v strede */
+  justify-content: flex-end;
+}
+
+/* položky menu: nech už nemajú výšku 100px, ktorá robí optické posuny */
+header.cae-header .main-nav ul.nav > li {
+  height: auto;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+/* CTA (Objednať) + ikona: stabilné zarovnanie */
+header.cae-header .main-nav ul.nav > li:last-child a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+header.cae-header .main-nav ul.nav > li:last-child a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 0;             /* zrušíme -1px z template */
+  margin-right: 10px;
+  position: relative;
+  top: -1px;                  /* jemne vyššie, aby nevybiehal */
+}
+
+header.cae-header .main-nav ul.nav > li:last-child a i {
+  width: 30px;
+  height: 30px;
+  line-height: 36px;
+  font-size: 13px;
+}
+
+header.cae-header .main-nav ul.nav > li:last-child a i {
+  margin-left: 3px; /* skús 6px */
+}
+
+/* CAE: skrátiť čierny pill (CTA) */
+header.cae-header .main-nav ul.nav > li:last-child a {
+  padding-right: 12px;  /* zmenši, napr. 8–12px */
+}
+
+/* CAE: alternatívny pás sekcie (jemné oddelenie) */
+.cae-section-alt {
+  background: #f7f7f7;
+  padding: 80px 0; /* ak chceš menej, daj 70px */
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* CAE: jednoduché karty v sekcii */
+.cae-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+
+/* CAE: Spolupráca / Kariéra (izolované triedy) */
+.cae-jobs { display: grid; gap: 16px; }
+
+.cae-job {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.cae-job h4 { margin: 0 0 10px 0; font-size: 18px; }
+.cae-job ul { margin: 0; padding-left: 18px; }
+.cae-job li { margin: 6px 0; }
+
+.cae-careers-media { width: 100%; }
+.cae-careers-img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.cae-form-card {
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.cae-form-hint { margin-top: 6px; margin-bottom: 14px; }
+
+.cae-form-row { margin-bottom: 12px; }
+.cae-form-row label { display: block; margin-bottom: 6px; font-weight: 600; }
+
+.cae-form input {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+}
+
+.cae-form input:focus {
+  border-color: rgba(243, 85, 37, 0.6); /* CAE orange */
+  box-shadow: 0 0 0 3px rgba(243, 85, 37, 0.15);
+}
+
+.cae-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  background: #f35525;
+  color: #fff;
+}
+
+.cae-form-msg { margin-top: 10px; font-weight: 600; }
+.cae-form-msg.ok { color: #1a7f37; }
+.cae-form-msg.err { color: #b42318; }
+
+
+/* CAE: Spolupráca - vyrovnať nadpis a dlaždice (ľavý stĺpec) */
+#spolupraca .section-heading {
+  margin-bottom: 18px;
+}
+
+#spolupraca .cae-jobs {
+  margin-top: 0;
+}
+
+
+/* znížiť vertikálny gap v tejto sekcii */
+#spolupraca .row.g-5 {
+  --bs-gutter-y: 2rem; /* default pri g-5 býva väčší; skús 2rem */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+*/
+
+
 /* responsive tweaks */
 @media (max-width: 991px){
   .cae-info-strip{grid-template-columns:repeat(2,1fr);} 
