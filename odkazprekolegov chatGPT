@@ -1,0 +1,17 @@
+PETO 25.12 18:21
+
+Mini-súhrn (copy-paste pre kolegu):
+
+Pridaná sekcia #spolupraca (voľné pracovné miesta) medzi galériou a kontaktom.
+
+V menu pribudla položka „Spolupráca“ (anchor #spolupraca) medzi Galéria a Objednať.
+
+V sekcii sú 2 job cards + obrázok + jednoduchý form (meno, tel) s fake submit hláškou (bez backendu).
+
+CSS je izolované cez .cae-* triedy v assets/css/cisteautoexpres.css.
+
+JS fake submit je v assets/js/cisteautoexpres.js (handler na #caeJobsForm).
+
+Zarovnanie: v #spolupraca je row zarovnaný na align-items-start (alebo CSS override).
+
+Prosím nemenť globálne template triedy, ideálne držať CAE úpravy v .cae-* alebo v scope header.cae-header.

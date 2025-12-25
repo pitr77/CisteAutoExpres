@@ -1,0 +1,123 @@
+================================================================
+GIT WORKFLOW: TRVALÁ VETVA (peto_branch)
+================================================================
+Tento cyklus opakuj pri každej novej úlohe.
+(napr. úprava hlavičky, pridanie cenníka, oprava chyby)
+
+
+[ KROK 1 ] ŠTART: Synchronizácia
+----------------------------------------------------------------
+DÔLEŽITÉ: Vždy začni týmto krokom!
+Musíš si stiahnuť novinky od kolegu, aby si nepracoval na starej verzii.
+
+POSTUP:
+1.  Prepni sa do tvojej pracovnej vetvy:
+    $ git checkout peto_branch
+2.  KĽÚČOVÉ! Stiahni aktuálny kód z 'main' a zlúč ho k tebe:
+    $ git pull origin main
+(Teraz máš aktuálny stav a môžeš začať robiť.)
+
+
+
+[ KROK 2 ] PRÁCA: Kódovanie
+----------------------------------------------------------------
+Teraz je čas na tvoju prácu.
+Upravuješ súbory (index.html, style.css...) vo svojom editore.
+
+
+[ KROK 3 ] ULOŽENIE: Commit
+----------------------------------------------------------------
+Robíš to, keď máš hotovo a všetko ti funguje.
+Vytváraš "bod uloženia" v histórii.
+
+POSTUP:
+1.  Priprav všetky zmenené súbory na uloženie:
+    $ git add .
+2.  Ulož verziu do histórie (do úvodzoviek napíš, čo si robil):
+    $ git commit -m "Popis zmeny (napr. Oprava menu)"
+
+
+[ KROK 4 ] ODOSLANIE: Push
+----------------------------------------------------------------
+Týmto pošleš svoju uloženú prácu z počítača na server GitHub.
+
+POSTUP:
+1.  Nahraj tvoju vetvu na server:
+    $ git push
+
+
+
+[ KROK 5 ] FINÁLE: Merge (Na webe GitHub.com)
+----------------------------------------------------------------
+Teraz choď do prehliadača na stránku repozitára.
+Tvojou úlohou je spojiť tvoju vetvu do hlavnej (main).
+
+POSTUP NA WEBE:
+1.  Klikni na veľké zelené tlačidlo "Compare & pull request". 
+	(Je to skryte pod tlacidlom contribute)
+2.  Skontroluj, či sú zmeny v poriadku a klikni "Create pull request".
+3.  Klikni "Merge pull request" a potom potvrď "Confirm merge".
+
+(Týmto sa tvoja práca dostala do 'main' a uvidí ju aj kolega.)
+
+================================================================
+>>> HOTOVO! A TERAZ ZNOVA NA KROK 1 PRE NOVÚ ÚLOHU. <<<
+================================================================
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+================================================================
+GIT ŤAHÁK: AKO POZRIEŤ KOLEGOVU PRÁCU (Review)
+================================================================
+Použi tento postup, keď ti kolega povie:
+"Mám hotovo, pushol som to do vetvy 'Kamil_branch', pozri sa na to."
+
+DÔLEŽITÉ PRAVIDLO:
+V cudzej vetve len pozeráme a testujeme. NEUPRAVUJEME KÓD!
+Ak nájdeš chybu, len mu daj vedieť, nech si to opraví on.
+
+
+[ KROK 1 ] Aktualizácia zoznamu vetiev
+----------------------------------------------------------------
+Tvoj počítač ešte nevie, že na serveri pribudla nová vetva.
+Musíš mu povedať, nech sa pozrie na GitHub.
+
+PRÍKAZ:
+$ git fetch
+(Výstup: Mal by si vidieť niečo ako "new branch: origin/Kamil_branch")
+
+
+
+[ KROK 2 ] Prepnutie sa do kolegovaj vetvy
+----------------------------------------------------------------
+Teraz sa prenesieš do "jeho sveta".
+POZOR: Názov vetvy musí byť PRESNE rovnaký, vrátane veľkých/malých písmen!
+
+PRÍKAZ (nahraď názvom jeho vetvy):
+$ git checkout Kamil_branch
+(Teraz sa ti v editore zmenili súbory na jeho verziu.)
+
+
+
+[ KROK 3 ] Testovanie (Live Server)
+----------------------------------------------------------------
+Teraz si v jeho vetve. Spusti si "Go Live" vo VS Code a pozri si stránku v prehliadači.
+
+- Funguje to tak, ako malo?
+- Páči sa ti dizajn?
+(Pripomienka: Nič neukladaj ani necommituj.)
+
+
+
+[ KROK 4 ] Návrat domov
+----------------------------------------------------------------
+Keď si všetko pozrel, vráť sa späť do svojej pracovnej vetvy.
+
+PRÍKAZ:
+$ git checkout peto_branch
+(Súbory v editore sa vrátia späť do tvojho pôvodného stavu.)
+
+================================================================
