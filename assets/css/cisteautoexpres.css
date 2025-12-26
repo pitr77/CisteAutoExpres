@@ -423,6 +423,21 @@ header.cae-header .main-nav ul.nav > li:last-child a {
     resize: vertical;   /* nech si to user môže ešte natiahnuť */
   }
 }
+#contact .cae-form-success {
+  background: #e9f8ef;
+  border: 1px solid #bfe9cd;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#contact .cae-form-error {
+  background: #fdecec;
+  border: 1px solid #f3b9b9;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
 
 
 

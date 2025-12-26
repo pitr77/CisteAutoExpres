@@ -417,7 +417,10 @@
               </div>
             </div>
 
-            <form id="caeContactForm" class="mt-4">
+            <form id="caeContactForm" class="cae-form mt-4" action="https://formspree.io/f/mlgedloy" method="POST">
+              <input type="hidden" name="_subject" value="Dopyt – Čisté Auto Expres">
+              <input type="text" name="_gotcha" style="display:none">
+
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label">Meno</label>
@@ -439,6 +442,13 @@
                 <div class="col-12">
                   <button type="submit" class="cae-btn cae-btn-full">Odoslať dopyt</button>
                 </div>
+              </div>
+              <div id="caeFormSuccess" class="cae-form-success mt-3" style="display:none;">
+                Ďakujeme! Dopyt bol odoslaný. Ozveme sa ti čo najskôr.
+              </div>
+
+              <div id="caeFormError" class="cae-form-error mt-3" style="display:none;">
+                Ups… niečo sa nepodarilo. Skús to prosím ešte raz, alebo nám zavolaj.
               </div>
 
               <div class="cae-form-note mt-2">
