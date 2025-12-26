@@ -12,7 +12,7 @@ Musíš si stiahnuť novinky od kolegu, aby si nepracoval na starej verzii.
 
 POSTUP:
 1.  Prepni sa do tvojej pracovnej vetvy:
-    $ git checkout peto_branch
+    $ git checkout peto_branch_newTemplate
 2.  KĽÚČOVÉ! Stiahni aktuálny kód z 'main' a zlúč ho k tebe:
     $ git pull origin main
 (Teraz máš aktuálny stav a môžeš začať robiť.)
@@ -97,7 +97,7 @@ Teraz sa prenesieš do "jeho sveta".
 POZOR: Názov vetvy musí byť PRESNE rovnaký, vrátane veľkých/malých písmen!
 
 PRÍKAZ (nahraď názvom jeho vetvy):
-$ git checkout Kamil_branch
+$ git checkout kamil_branch
 (Teraz sa ti v editore zmenili súbory na jeho verziu.)
 
 

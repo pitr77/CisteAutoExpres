@@ -82,4 +82,63 @@
       form.reset();
     });
   }
+  // ---------------------------------------------------------------------------------------
+  // PETO
+  //---------------------------------------------------------------------------------------
+
+  // CONTACT FAQ: nedovoľ zbalenie poslednej otvorenej otázky (aby sa blok nehýbal)
+
+  // CONTACT FAQ: iba jedna otvorená + nedovoľ stav "všetko zatvorené"
+  (function () {
+    const faq = document.getElementById("caeFaq");
+    if (!faq || typeof bootstrap === "undefined") return;
+
+    let lastToggleBtn = null;
+
+    // zachyť, na čo user klikol ešte predtým, než Bootstrap spracuje toggle
+    faq.addEventListener(
+      "pointerdown",
+      function (e) {
+        const btn = e.target.closest(".accordion-button");
+        if (btn) lastToggleBtn = btn;
+      },
+      true
+    );
+
+    // aj pre klávesnicu (Enter / Space)
+    faq.addEventListener(
+      "keydown",
+      function (e) {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        const btn = e.target.closest(".accordion-button");
+        if (btn) lastToggleBtn = btn;
+      },
+      true
+    );
+
+    // vždy len jedna otvorená (pre istotu, keby sa to niekde “rozbilo”)
+    faq.addEventListener("show.bs.collapse", function (e) {
+      faq.querySelectorAll(".accordion-collapse.show").forEach((el) => {
+        if (el !== e.target) {
+          bootstrap.Collapse.getOrCreateInstance(el).hide();
+        }
+      });
+    });
+
+    // nedovoľ zavrieť poslednú otvorenú (ale prepnutie na inú otázku povol)
+    faq.addEventListener("hide.bs.collapse", function (e) {
+      const opened = faq.querySelectorAll(".accordion-collapse.show");
+      if (opened.length !== 1) return;
+      if (opened[0] !== e.target) return;
+
+      const targetId = e.target.id;
+      const controls = lastToggleBtn && lastToggleBtn.getAttribute("aria-controls");
+
+      // ak user klikol na tú istú otvorenú otázku -> chcel ju zavrieť -> blokuj
+      if (controls === targetId) {
+        e.preventDefault();
+      }
+    });
+  })();
+
 })();
