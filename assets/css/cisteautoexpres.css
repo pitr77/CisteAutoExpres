@@ -237,28 +237,7 @@ header.cae-header .main-nav ul.nav > li:last-child a {
 }
 
 
-/* CAE: Spolupráca / Kariéra (izolované triedy) */
-.cae-jobs { display: grid; gap: 16px; }
 
-.cae-job {
-  background: #fff;
-  border-radius: 16px;
-  padding: 18px 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-}
-
-.cae-job h4 { margin: 0 0 10px 0; font-size: 18px; }
-.cae-job ul { margin: 0; padding-left: 18px; }
-.cae-job li { margin: 6px 0; }
-
-.cae-careers-media { width: 100%; }
-.cae-careers-img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-  display: block;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
 
 .cae-form-card {
   margin-top: 16px;
@@ -301,20 +280,165 @@ header.cae-header .main-nav ul.nav > li:last-child a {
 .cae-form-msg.err { color: #b42318; }
 
 
-/* CAE: Spolupráca - vyrovnať nadpis a dlaždice (ľavý stĺpec) */
-#spolupraca .section-heading {
-  margin-bottom: 18px;
+/* CONTACT: jemné doladenie rozostupov a zarovnania (izolované len pre #contact) */
+#contact .section-heading {
+  margin-bottom: 10px; /* menej miesta medzi nadpisom a boxom */
 }
 
-#spolupraca .cae-jobs {
+/* viac priestoru medzi ľavým a pravým stĺpcom */
+#contact .row.g-4 {
+  --bs-gutter-x: 3rem;  /* horizontálne (medzi stĺpcami) */
+  --bs-gutter-y: 2rem;  /* vertikálne (na menších šírkach) */
+}
+
+/* CONTACT – heading cez celú šírku + menšia medzera pod ním */
+#contact .section-heading {
+  margin-bottom: 22px; /* pôvodne 70px z template */
+}
+
+/* pravý stĺpec: mapa hore, FAQ dole */
+#contact .cae-contact-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* pružná medzera medzi mapou a FAQ (minimálne nech to “nedrží nalepené”) */
+#contact .cae-contact-spacer {
+  flex: 1;
+  min-height: 16px;
+}
+
+/* zruš mt-4 efekt, keďže spacing rieši spacer */
+#contact .cae-faq {
   margin-top: 0;
 }
 
 
-/* znížiť vertikálny gap v tejto sekcii */
-#spolupraca .row.g-5 {
-  --bs-gutter-y: 2rem; /* default pri g-5 býva väčší; skús 2rem */
+/* FAQ sa „pritlačí“ na spodok pravého stĺpca */
+#contact .cae-faq {
+  margin-top: auto !important; /* prepíše mt-4 */
 }
+
+
+/*--------------------------------------------------------------------- */
+
+
+
+/* CONTACT: doladenie rozostupov a zarovnania (len #contact) */
+#contact .section-heading {
+  margin-bottom: 8px !important;
+  /* menšia medzera medzi nadpisom a boxom */
+}
+
+#contact .section-heading h2 {
+  margin-bottom: 0 !important;
+}
+
+/* viac priestoru medzi ľavým a pravým stĺpcom */
+#contact .row.g-4 {
+  --bs-gutter-x: 3.5rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* pravý stĺpec ako flex, aby FAQ vedelo ísť na spodok */
+#contact .row.align-items-stretch>.col-lg-6:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* na desktope posunieme pravý stĺpec dole, aby mapa začínala na úrovni boxu s formulárom */
+@media (min-width: 992px) {
+  #contact .row.align-items-stretch>.col-lg-6:last-child {
+    padding-top: 78px;
+    /* ak treba, doladíme +/− 10px */
+  }
+}
+
+/* mapa menšia, nech pôsobí vyváženejšie */
+#contact .cae-map-card iframe {
+  height: 360px;
+  /* bolo 420px */
+}
+
+/* FAQ pritlačené na spodok */
+#contact .cae-faq {
+  margin-top: auto !important;
+}
+
+
+/* CONTACT layout fix (bez zásahu do iných sekcií) */
+#contact .section-heading {
+  margin-bottom: 22px;
+}
+
+#contact .cae-contact-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#contact .cae-map-card iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  display: block;
+}
+
+/* medzera medzi mapou a FAQ: na mobile normálna, na desktope “pružná” aby FAQ sedelo dole */
+#contact .cae-right-spacer {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #contact .cae-right-spacer {
+    display: block;
+    flex: 1;
+    min-height: 18px;
+  }
+}
+
+/* CONTACT: posuň sekciu vyššie (zmenší veľkú medzeru nad ňou) */
+#contact.section {
+  padding-top: 50px;   /* skús 50, ak stále veľa tak 30 */
+  margin-top: 0;
+}
+
+#contact .section-heading {
+  margin-bottom: 14px;   /* bolo 22px */
+}
+
+
+/* CONTACT: pravý stĺpec (mapa+FAQ) posuň vyššie */
+@media (min-width: 992px) {
+  #contact .cae-contact-right {
+    margin-top: -45px; /* skús -30, ak treba viac, daj -40 */
+  }
+}
+
+/* CONTACT: natiahni pole Správa, aby spodok ľavého stĺpca vyšiel zarovno s FAQ */
+@media (min-width: 992px) {
+  #contact textarea[name="message"] {
+    min-height: 260px;  /* skús 260, ak treba viac tak 300 */
+    resize: vertical;   /* nech si to user môže ešte natiahnuť */
+  }
+}
+#contact .cae-form-success {
+  background: #e9f8ef;
+  border: 1px solid #bfe9cd;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#contact .cae-form-error {
+  background: #fdecec;
+  border: 1px solid #f3b9b9;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
 
 
 
