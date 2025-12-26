@@ -1,3 +1,39 @@
+PETO 26.12.2025 19:04
+
+Pracujeme na projekte CisteAutoExpres (2 ľudia paralelne). Dnešné zmeny sa týkajú iba sekcie Kontakt (id="contact") – cieľ bol: dorovnať layout, upraviť adresu+mapu, stabilizovať FAQ a napojiť odosielanie formulára cez Formspree (bez backendu).
+
+ČO SA DNES UROBILO (len dnes):
+1) Kontakt – adresa + mapa
+- Text adresy zmenený na: “Kežmarská cesta 63, 054 01 Levoča”
+- Google Maps iframe embed upravený na túto adresu (nový embed link).
+
+2) Kontakt – layout zarovnanie (desktop)
+- Cieľ: ľavý stĺpec = kontaktné kartičky + formulár, pravý stĺpec = mapa + FAQ.
+- Mapa už nie je “príliš vysoko” oproti formuláru – vizuálne sú zarovnané.
+- Spacing medzi mapou a FAQ upravený tak, aby to nepôsobilo nalepené.
+- Textarea (Správa) má nastavenú výšku ~260px, aby spodok formulára dorovnal spodok FAQ bloku (vizuálne zarovnanie).
+
+3) Kontakt – FAQ (Bootstrap accordion) stabilita
+- Požiadavka: nech sa nedá dosiahnuť stav “všetko zatvorené”, lebo sa potom hýbe celý blok.
+- Riešenie: JS handler na `hide.bs.collapse`, ktorý blokuje zatvorenie poslednej otvorenej otázky (preventDefault), ale zároveň necháva normálne prepínanie medzi otázkami.
+- Stav: funguje — posledná otvorená sa nedá zavrieť.
+
+4) Kontakt – Form odosielanie cez Formspree
+- Form je napojený na Formspree endpoint: https://formspree.io/f/mlgedloy
+- Klientská validácia (minimálne meno + telefón + správa; email môže byť voliteľný podľa aktuálneho stavu).
+- Po úspešnom odoslaní: zobrazí sa success hláška + form.reset().
+- Pozn.: maily z Formspree môžu padať do spamu (v Gmaile treba “Not spam” + filter “Never send to spam”).
+
+SÚBORY, KDE SA TO RIEŠILO:
+- `index.html` – sekcia Kontakt (id="contact"): adresa, iframe embed mapy, štruktúra layoutu, form a FAQ blok.
+- `assets/css/cisteautoexpres.css` – contact layout/spacing + výška textarea (správa) ~260px + drobné zarovnania.
+- `assets/js/cisteautoexpres.js` – FAQ blokácia “všetko zatvorené” + Formspree submit (fetch/POST) + success/error hlášky.
+
+DÔLEŽITÉ PRE KOLEGU:
+- Nezasahuj do iných sekcií globálne (CSS selektory drž čo najviac pod `#contact` alebo `.cae-*`), lebo pracujeme paralelne a nechceme side-effects.
+- Ak budeš meniť galériu alebo iné časti, vyhni sa úpravám spoločných Bootstrap / globálnych class štýlov bez lokálneho scopu.
+
+-------------------------------------------------------------------------------
 PETO 25.12 18:21
 
 Mini-súhrn (copy-paste pre kolegu):
