@@ -15,3 +15,7 @@ JS fake submit je v assets/js/cisteautoexpres.js (handler na #caeJobsForm).
 Zarovnanie: v #spolupraca je row zarovnaný na align-items-start (alebo CSS override).
 
 Prosím nemenť globálne template triedy, ideálne držať CAE úpravy v .cae-* alebo v scope header.cae-header.
+
+KAMIL 25.12 21:21
+
+V galérii som prerobil sekciu „Ukážky pred / po“ tak, aby každý galériový box obsahoval dve samostatné fotky vedľa seba
