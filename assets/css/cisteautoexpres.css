@@ -419,7 +419,7 @@ header.cae-header .main-nav ul.nav > li:last-child a {
 /* CONTACT: natiahni pole Správa, aby spodok ľavého stĺpca vyšiel zarovno s FAQ */
 @media (min-width: 992px) {
   #contact textarea[name="message"] {
-    min-height: 260px;  /* skús 260, ak treba viac tak 300 */
+    min-height: 295px;  /* skús 260, ak treba viac tak 300 */
     resize: vertical;   /* nech si to user môže ešte natiahnuť */
   }
 }
