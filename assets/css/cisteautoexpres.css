@@ -186,7 +186,7 @@
 /* CAE: header menu vertikálne do stredu (iba index header .cae-header) */
 header.cae-header .main-nav {
   height: 100px;              /* držíme sa template výšky */
-  display: flex;
+  display: ruby;
   align-items: center;        /* vertikálne centrovanie v bielom páse */
 }
 
