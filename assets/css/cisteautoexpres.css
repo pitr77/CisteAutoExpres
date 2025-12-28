@@ -1476,8 +1476,8 @@ header.cae-header .main-nav ul.nav > li > a.cae-cta i{
 @media (max-width: 575.98px) {
   /* viac šírky pre celý hero obsah */
   .main-banner .item{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
  
   /* a ak by mal header-text ešte vlastné odsadenie */
@@ -1492,5 +1492,33 @@ header.cae-header .main-nav ul.nav > li > a.cae-cta i{
 @media (max-width: 575.98px) {
   .cae-hero .header-text h2{
     font-size: 45px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* HERO: vycentruj text/obsah na mobiloch */
+  .cae-hero .header-text{
+    text-align: center;
+  }
+ 
+  .cae-hero .header-text h2,
+  .cae-hero .header-text p,
+  .cae-hero .header-text .cae-hero-actions{
+    text-align: center;
+    justify-content: center;
+  }
+ 
+  /* OWL carousel arrows + dots nech majú priestor */
+  .main-banner .owl-nav .owl-prev i{
+    left: 20px !important;
+  }
+  .main-banner .owl-nav .owl-next i{
+    right: 20px !important;
+  }
+ 
+  /* ak sa ti CTA tlačidlo (Pozrieť galériu) na slide 2 lepí na kraj,
+     vynútime mu max šírku s bočnými okrajmi */
+  .cae-hero .header-text .cae-btn{
+    max-width: calc(100% - 40px);
   }
 }
