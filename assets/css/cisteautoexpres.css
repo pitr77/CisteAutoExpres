@@ -1488,3 +1488,9 @@ header.cae-header .main-nav ul.nav > li > a.cae-cta i{
     padding-right: 0 !important;
   }
 }
+
+@media (max-width: 575.98px) {
+  .cae-hero .header-text h2{
+    font-size: 45px !important;
+  }
+}
