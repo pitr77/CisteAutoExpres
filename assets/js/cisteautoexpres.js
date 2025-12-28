@@ -13,6 +13,22 @@
     var top = el.getBoundingClientRect().top + window.pageYOffset - (h + 10);
     window.scrollTo({ top: top, behavior: 'smooth' });
   }
+  function closeMobileMenu() {
+    var trigger = document.querySelector('.menu-trigger');
+    var nav = document.querySelector('.header-area .nav');
+    if (!trigger || !nav) return;
+
+    if (window.innerWidth <= 767) {
+      trigger.classList.remove('active');
+
+      // ak je jQuery (u teba je), sprav pekné zbalenie
+      if (window.jQuery) {
+        window.jQuery(nav).stop(true, true).slideUp(200);
+      } else {
+        nav.style.display = 'none';
+      }
+    }
+  }
 
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
@@ -20,6 +36,7 @@
     var href = a.getAttribute('href') || '';
     if (href.startsWith('#') && href.length > 1) {
       e.preventDefault();
+      closeMobileMenu();
       smoothTo(href);
     }
   });

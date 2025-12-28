@@ -124,36 +124,11 @@
 .cae-footer-copy{margin-top:8px; opacity:.75;}
 
 
-/* CAE fix – "Objednať" button v header nav (posun ikony + väčší pill) */
-.header-area .main-nav .nav li:last-child a {
-  display: inline-flex;
-  align-items: center;
-  /* trochu viac priestoru, nech nič nevybieha */
-  min-height: 44px;
-  line-height: 44px;
-  padding-right: 50px; /* môžeš dať 20-24 ak chceš širšie */
-}
 
-/* oranžový kruh s ikonou */
-.header-area .main-nav .nav li:last-child a i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
 
-  /* zrušíme problémové posuny */
-  margin-left: 0;
-  margin-right: 10px;
 
-  /* jemný posun hore, ak ešte stále vizuálne “padá” */
-  position: relative;
-  top: -1px;
 
-  border-radius: 50%;
-}
 /*
 ---------------------------------------------------------------------------------------
 -- PETOVE UPRAVY
@@ -467,4 +442,275 @@ header.cae-header .main-nav ul.nav > li:last-child a {
   .cae-gallery-item img{height:170px;}
   .cae-info-strip{grid-template-columns:1fr;} 
   .cae-footer-links{justify-content:flex-start;}
+}
+
+/*
+---------------------------------------------------------------------------------------
+-- PETOVE UPRAVY
+---------------------------------------------------------------------------------------
+*/
+
+
+
+/* =========================================================
+   RESPONSIVE HEADER – drž desktop menu do 768px
+   (override šablóny, aby sa to nelámalo pri < 992px)
+   ========================================================= */
+
+@media (max-width: 991px) and (min-width: 768px) {
+  /* vypni mobile trigger (hamburger) ak ho šablóna zapína */
+  .header-area .main-nav .menu-trigger,
+  .background-header .main-nav .menu-trigger {
+    display: none !important;
+  }
+
+  /* nav nech ostane v jednom riadku */
+  .header-area .main-nav .nav,
+  .background-header .main-nav .nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 6px; /* jemné rozostupy */
+  }
+
+  /* trochu zmenši položky menu */
+  .header-area .main-nav .nav li a,
+  .background-header .main-nav .nav li a {
+    padding: 0 10px !important;
+    font-size: 15px !important;
+    white-space: nowrap;
+  }
+
+  /* logo nech nezaberá zbytočne veľa */
+  .header-area .main-nav .logo,
+  .background-header .main-nav .logo {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* objednať button nech je kompaktnejší */
+  .header-area .main-nav .main-button a,
+  .background-header .main-nav .main-button a {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px 0 52px !important; /* miesto pre ikonku */
+    white-space: nowrap;
+  }
+
+  /* oranžový kruh (ikonka) mierne menší + odsadený */
+  .header-area .main-nav .main-button a i,
+  .background-header .main-nav .main-button a i {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    left: 6px;
+    top: 3px;
+  }
+}
+
+/* =========================================================
+   HEADER – responsive fix (single source of truth)
+   Cieľ:
+   - Desktop/tablet: menu v jednom riadku, CTA sa zmestí
+   - Úzke tablety: CTA sa zmení na obyčajný textový link
+   - Mobil: iba hamburger + rozbaľovacie menu (template správanie)
+   ========================================================= */
+
+html, body { overflow-x: hidden; }
+
+/* Zruš template margin-top pre menu iba na našom headeri */
+header.cae-header .main-nav ul.nav { margin-top: 0 !important; }
+
+/* CTA bez ikonky: template má padding-left:0, tak ho vrátime */
+@media (min-width: 768px) {
+  header.cae-header .main-nav .nav li:last-child a {
+    padding-left: 18px !important;   /* keďže sme vyhodili <i> */
+    padding-right: 18px !important;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+/* Tablet: zmenši spacing, aby sa “Objednať” nestrácalo (cca 1029 → 820) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  header.cae-header .main-nav .nav li { padding-left: 6px; padding-right: 6px; }
+  header.cae-header .main-nav .nav li a {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+/* Úzke tablety: CTA už nebude pill, ale obyčajný link ako ostatné */
+@media (max-width: 860px) and (min-width: 768px) {
+  header.cae-header .main-nav .nav li:last-child a {
+    background: transparent !important;
+    color: #1e1e1e !important;
+    font-weight: 500 !important;
+    border-radius: 0 !important;
+    padding: 0 12px !important;
+    height: 40px;
+    line-height: 40px;
+  }
+  header.cae-header .main-nav .nav li:last-child:hover a {
+    color: #f35525 !important;
+  }
+}
+
+
+
+
+@media (max-width: 860px) and (min-width: 768px) {
+  header.cae-header .main-nav .nav li:last-child a {
+    background: transparent !important;
+    color: #1e1e1e !important;
+    font-weight: 500 !important;
+    border-radius: 0 !important;
+    padding: 0 12px !important;
+    height: 40px;
+    line-height: 40px;
+  }
+  header.cae-header .main-nav .nav li:last-child:hover a {
+    color: #f35525 !important;
+  }
+}
+
+
+
+/*
+---------------------------------------------------------------------------------------
+-- 
+---------------------------------------------------------------------------------------
+*/
+
+
+/* ===== MOBILE NAV (jediný zdroj pravdy) ===== */
+@media (max-width: 767.98px) {
+  header.cae-header { position: relative; z-index: 9999; }
+  header.cae-header .main-nav { overflow: visible !important; }
+
+  /* default: menu je zavreté */
+  header.cae-header .main-nav ul.nav{
+    display: none;                 /* <- toto zabráni bielemu prekrytiu na #home */
+    position: absolute !important;
+    left: 0; right: 0; top: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    border-top: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    border-radius: 0 0 16px 16px;
+    z-index: 99999;
+  }
+
+  /* otvorené menu iba keď header má triedu menu-open */
+  header.cae-header.menu-open .main-nav ul.nav{
+    display: block;
+  }
+
+  /* všetky položky rovnaké (Domov..Galéria..Objednať) */
+  header.cae-header .main-nav ul.nav li a{
+    display: block !important;
+    padding: 15px 18px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    background: #fff !important;
+    color: #1e1e1e !important;
+  }
+
+  /* Objednať = normálny link (nie pill button) */
+  header.cae-header .main-nav ul.nav li a.cae-cta{
+    background: #fff !important;
+    color: #1e1e1e !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  header.cae-header .main-nav ul.nav li a.cae-cta i{
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  /* vynúť, aby "Objednať" nikdy nezmizlo */
+  header.cae-header .main-nav ul.nav > li:last-child{
+    display: list-item !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  header.cae-header .main-nav ul.nav > li:last-child > a{
+    display: block !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header.cae-header .main-nav ul.nav {
+    display: none !important;
+  }
+  header.cae-header.menu-open .main-nav ul.nav {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header.cae-header .main-nav ul.nav {
+    display: none !important;
+  }
+  header.cae-header.menu-open .main-nav ul.nav {
+    display: block !important;
+  }
+}
+
+/* ===== TABLET (768–991): desktop štýl, bez hamburgera, CTA ako normálny link ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  /* hamburger preč */
+  header.cae-header .menu-trigger { 
+    display: none !important; 
+  }
+
+  /* nav musí byť vždy viditeľný a v jednej línii */
+  header.cae-header .main-nav ul.nav{
+    display: flex !important;
+    position: static !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  header.cae-header .main-nav ul.nav > li{
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+
+  /* položky trochu zmenši, nech sa zmestia */
+  header.cae-header .main-nav ul.nav > li > a{
+    padding: 0 10px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Objednať: rovnaký štýl ako ostatné odkazy (žiadny pill) */
+  header.cae-header .main-nav ul.nav > li > a.cae-cta{
+    background: transparent !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 10px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ikonku môžeš na tablete schovať, nech to neuberá miesto */
+  header.cae-header .main-nav ul.nav > li > a.cae-cta i{
+    display: none !important;
+  }
 }
