@@ -1,156 +1,61 @@
+/* ==========================================================================
+   RustyGarage – custom styles (responsive, single source of truth)
+   Loaded after `templatemo-villa-agency.css`, so overrides go here.
+   ========================================================================== */
 
-:root{
-  --cae-primary:#00a3ff;
-  --cae-dark:#0b1b2b;
-  --cae-dark-2:#0f253a;
-  --cae-bg:#f6f9fc;
-  --cae-text:#1a2430;
+:root {
+  --cae-primary: #00a3ff;
+  --cae-dark: #0b1b2b;
+  --cae-dark-2: #0f253a;
+  --cae-bg: #f6f9fc;
+  --cae-text: #1a2430;
 }
 
-/* tiny top bar */
-.cae-sub-header{background:var(--cae-dark);}
-.cae-sub-header .info li{color:#dbe9f6;}
-.cae-sub-header .info li i{color:var(--cae-primary);}
-.cae-sub-header .social-links li a{border:1px solid rgba(255,255,255,.12);}
-.cae-sub-header .social-links li a i{color:#fff;}
+html, body { overflow-x: hidden; }
 
-/* header */
-.cae-header{background:#fff;}
-.cae-header .logo h1{font-size:26px; letter-spacing:.3px;}
-.cae-header .logo h1 span{color:var(--cae-primary);}
-.cae-header .nav li a{font-weight:600;}
-.cae-header .nav li a.cae-cta{background:var(--cae-primary); color:#fff!important; border-radius:999px; padding:10px 16px;}
-.cae-header .nav li a.cae-cta:hover{filter:brightness(.95);}
+/* Prevent double spacing from TemplateMo `.section { margin-top: 120px; }` */
+.cae-section.section {
+  margin-top: 0;
+  padding: 90px 0;
+}
+.cae-section-alt { background: var(--cae-bg); }
 
-/* hero */
-.cae-hero .header-text{max-width:760px;}
-.cae-hero-slide{background-position:center; background-size:cover;}
-.cae-hero .header-text h2{line-height:1.05;}
-.cae-hero .header-text h2 span{color:var(--cae-primary);}
-.cae-hero .header-text h2 small{display:block; font-size:18px; font-weight:500; opacity:.95; margin-top:10px;}
-.cae-hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
-.cae-btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; background:var(--cae-primary); color:#fff; font-weight:700; transition:.2s;}
-.cae-btn:hover{color:#fff; transform:translateY(-1px); filter:brightness(.96);}
-.cae-btn-ghost{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(6px);}
-.cae-btn-ghost:hover{background:rgba(255,255,255,.18);}
-.cae-btn-small{padding:10px 14px; border-radius:12px;}
-.cae-btn-full{width:100%;}
+/* Better anchor offsets with sticky header */
+section[id] { scroll-margin-top: 96px; }
 
-.cae-trust{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
-.cae-trust-item{background:rgba(11,27,43,.55); border:1px solid rgba(255,255,255,.12); color:#fff; padding:10px 12px; border-radius:14px; font-weight:600;}
-.cae-trust-item i{color:var(--cae-primary); margin-right:8px;}
+/* Contact section: smaller heading gap (template uses 70px) */
+#contact .section-heading { margin-bottom: 22px; }
 
-/* sections */
-.cae-section{padding:90px 0;}
-.cae-section-alt{background:var(--cae-bg);}
-.cae-lead{font-size:16px; line-height:1.8; color:#445466;}
-.cae-subtitle{margin-top:8px; color:#5a6b7c;}
+/* ==========================================================================
+   Sub-header (top bar)
+   ========================================================================== */
+.cae-sub-header { background: var(--cae-dark); }
+.cae-sub-header .info li { color: #dbe9f6; }
+.cae-sub-header .info li i { color: var(--cae-primary); }
+.cae-sub-header .social-links li a { border: 1px solid rgba(255,255,255,.12); }
+.cae-sub-header .social-links li a i { color: #fff; }
 
-/* about media card */
-.cae-card{background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 18px 50px rgba(11,27,43,.08); border:1px solid rgba(11,27,43,.06);}
-.cae-card-media{position:relative;}
-.cae-card-media img{width:100%; height:auto; display:block;}
-.cae-badge{position:absolute; left:18px; bottom:18px; display:flex; gap:10px; align-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(11,27,43,.08); border-radius:18px; padding:12px 14px; box-shadow:0 12px 30px rgba(11,27,43,.12);}
-.cae-badge-big{font-size:26px; font-weight:900; color:var(--cae-dark);} 
-.cae-badge-text{font-size:12px; line-height:1.2; color:#516070;}
+/* ==========================================================================
+   Header / navigation (index only – `header.cae-header`)
+   ========================================================================== */
+header.cae-header { background: #fff; }
+header.cae-header .logo h1 { font-size: 26px; letter-spacing: .3px; }
+header.cae-header .logo h1 span { color: var(--cae-primary); }
 
-/* checklist */
-.cae-checklist{margin-top:18px; display:grid; gap:10px;}
-.cae-check{display:flex; gap:10px; align-items:flex-start; color:#3a4a5a; font-weight:600;}
-.cae-check i{color:var(--cae-primary); margin-top:2px;}
-
-.cae-mini-note{margin-top:18px; background:rgba(0,163,255,.08); border:1px solid rgba(0,163,255,.18); padding:14px 16px; border-radius:16px; color:#24506d;}
-
-/* services */
-.cae-service{background:#fff; border-radius:22px; padding:22px; height:100%; box-shadow:0 18px 50px rgba(11,27,43,.06); border:1px solid rgba(11,27,43,.06); transition:.2s;}
-.cae-service:hover{transform:translateY(-3px); box-shadow:0 22px 65px rgba(11,27,43,.1);} 
-.cae-service-icon{width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; background:rgba(0,163,255,.12); color:var(--cae-primary); font-size:22px; margin-bottom:14px;}
-.cae-service h4{margin-bottom:10px;}
-.cae-service p{color:#56677a; line-height:1.7;}
-.cae-link{display:inline-flex; align-items:center; gap:8px; margin-top:10px; font-weight:800; color:var(--cae-dark);} 
-.cae-link i{color:var(--cae-primary);} 
-.cae-link:hover{color:var(--cae-primary);} 
-
-.cae-info-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; background:#fff; border-radius:22px; padding:16px; border:1px solid rgba(11,27,43,.06); box-shadow:0 18px 50px rgba(11,27,43,.05);} 
-.cae-info-strip>div{display:flex; gap:10px; align-items:center; justify-content:center; padding:10px; border-radius:16px; background:rgba(11,27,43,.03); font-weight:800; color:#2a3a4a; text-align:center;}
-.cae-info-strip i{color:var(--cae-primary);} 
-
-/* pricing */
-.cae-price-card{background:#fff; border-radius:22px; padding:22px; height:100%; border:1px solid rgba(11,27,43,.06); box-shadow:0 18px 50px rgba(11,27,43,.06); position:relative; overflow:hidden;}
-.cae-price-featured{border:1px solid rgba(0,163,255,.35); box-shadow:0 22px 70px rgba(0,163,255,.12);} 
-.cae-ribbon{position:absolute; right:-42px; top:18px; transform:rotate(35deg); background:var(--cae-primary); color:#fff; font-weight:900; padding:8px 52px; font-size:12px;}
-.cae-price-top{display:flex; align-items:flex-end; justify-content:space-between; gap:10px;}
-.cae-price{font-weight:900; color:#3a4a5a;}
-.cae-price span{color:var(--cae-dark); font-size:26px;}
-.cae-price-list{margin:14px 0 18px 0; padding:0; list-style:none; display:grid; gap:10px;}
-.cae-price-list li{display:flex; gap:10px; align-items:flex-start; color:#56677a;}
-.cae-price-list li:before{content:"\f058"; font-family:"Font Awesome 5 Free"; font-weight:900; color:var(--cae-primary); margin-top:1px;}
-
-/* gallery */
-.cae-gallery-item{display:block; position:relative; border-radius:18px; overflow:hidden; border:1px solid rgba(11,27,43,.06); box-shadow:0 14px 40px rgba(11,27,43,.06);} 
-.cae-gallery-item img{width:100%; height:220px; object-fit:cover; transition:transform .25s;}
-.cae-gallery-item:hover img{transform:scale(1.04);} 
-.cae-gallery-label{position:absolute; left:12px; bottom:12px; background:rgba(11,27,43,.7); color:#fff; padding:8px 10px; border-radius:999px; font-size:12px; font-weight:800; border:1px solid rgba(255,255,255,.16);} 
-
-/* contact */
-.cae-contact-card{background:#fff; border-radius:22px; padding:22px; border:1px solid rgba(11,27,43,.06); box-shadow:0 18px 50px rgba(11,27,43,.06);} 
-.cae-contact-mini{display:flex; gap:12px; align-items:center; background:rgba(11,27,43,.03); border:1px solid rgba(11,27,43,.06); border-radius:18px; padding:14px; height:100%;}
-.cae-contact-mini .icon{width:42px; height:42px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:rgba(0,163,255,.12); color:var(--cae-primary);}
-.cae-contact-mini .label{font-size:12px; font-weight:900; color:#607284; text-transform:uppercase; letter-spacing:.6px;}
-.cae-contact-mini a, .cae-contact-mini span{font-weight:800; color:var(--cae-dark);}
-
-.cae-form label{font-size:12px; font-weight:900; color:#607284; text-transform:uppercase; letter-spacing:.6px; margin-bottom:6px;}
-.cae-form input, .cae-form textarea{width:100%; border-radius:16px; padding:12px 14px; border:1px solid rgba(11,27,43,.10); background:#fff; font-weight:600; color:var(--cae-text);} 
-.cae-form input:focus, .cae-form textarea:focus{outline:none; border-color:rgba(0,163,255,.6); box-shadow:0 0 0 4px rgba(0,163,255,.12);} 
-.cae-form-note{margin-top:10px; color:#6a7b8c; font-size:12px;}
-
-.cae-map-card{background:#fff; border-radius:22px; overflow:hidden; border:1px solid rgba(11,27,43,.06); box-shadow:0 18px 50px rgba(11,27,43,.06);} 
-.cae-map-card iframe{width:100%; height:420px; display:block;}
-.cae-map-note{padding:14px 16px; color:#607284; font-size:13px;}
-
-.cae-faq{background:rgba(11,27,43,.02); border:1px solid rgba(11,27,43,.06); border-radius:22px; padding:18px;}
-.cae-faq h4{margin-bottom:12px;}
-.cae-faq .accordion-item{border:0; margin-bottom:10px; border-radius:16px; overflow:hidden;}
-.cae-faq .accordion-button{font-weight:900;}
-
-/* footer */
-.cae-footer{background:var(--cae-dark); color:#dbe9f6; padding:36px 0;}
-.cae-footer-brand{font-size:18px; font-weight:900; letter-spacing:.4px;}
-.cae-footer-brand span{color:var(--cae-primary);} 
-.cae-footer-note{opacity:.85; margin-top:4px;}
-.cae-footer-links{display:flex; gap:14px; justify-content:flex-end; flex-wrap:wrap;}
-.cae-footer-links a{color:#dbe9f6; font-weight:800; opacity:.9;}
-.cae-footer-links a:hover{color:#fff; opacity:1;} 
-.cae-footer-copy{margin-top:8px; opacity:.75;}
-
-
-
-
-
-
-
-/*
----------------------------------------------------------------------------------------
--- PETOVE UPRAVY
----------------------------------------------------------------------------------------
-*/
-
-/* CAE: header menu vertikálne do stredu (iba index header .cae-header) */
 header.cae-header .main-nav {
-  height: 100px;              /* držíme sa template výšky */
+  height: 100px;
   display: flex;
-  align-items: center;        /* vertikálne centrovanie v bielom páse */
+  align-items: center;
 }
 
 header.cae-header .main-nav ul.nav {
-  margin-top: 0 !important;   /* zruší template posun o 30px dole */
-  flex-basis: auto;           /* nech to neťahá do zvláštneho layoutu */
+  margin-top: 0 !important; /* overrides template offset */
+  flex-basis: 100%;
   display: flex;
-  align-items: center;        /* položky menu v strede */
+  align-items: center;
   justify-content: flex-end;
 }
 
-/* položky menu: nech už nemajú výšku 100px, ktorá robí optické posuny */
 header.cae-header .main-nav ul.nav > li {
   height: auto;
   line-height: normal;
@@ -158,444 +63,198 @@ header.cae-header .main-nav ul.nav > li {
   align-items: center;
 }
 
-/* CTA (Objednať) + ikona: stabilné zarovnanie */
-header.cae-header .main-nav ul.nav > li:last-child a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
+header.cae-header .main-nav ul.nav > li > a {
+  font-weight: 600;
+  height: 40px;
   line-height: 40px;
+  padding: 0 14px;
 }
 
-header.cae-header .main-nav ul.nav > li:last-child a i {
+/* CTA (Objednať) – force our styling (avoid template `li:last-child` pill) */
+header.cae-header .main-nav ul.nav > li > a.cae-cta {
+  background: var(--cae-primary) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: 0 16px !important;
+  font-weight: 800 !important;
+}
+header.cae-header .main-nav ul.nav > li > a.cae-cta:hover { filter: brightness(.95); }
+header.cae-header .main-nav ul.nav > li > a.cae-cta i {
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: inherit !important;
+  border-radius: 0 !important;
+  margin: 0 8px 0 0;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.cae-hero .header-text { max-width: 760px; }
+.cae-hero-slide { background-position: center; background-size: cover; }
+.cae-hero .header-text h2 { line-height: 1.05; }
+.cae-hero .header-text h2 span { color: var(--cae-primary); }
+.cae-hero .header-text h2 small {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: .95;
+  margin-top: 10px;
+}
+
+.cae-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+/* Buttons (do NOT override globally to full width) */
+.cae-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin-left: 0;             /* zrušíme -1px z template */
-  margin-right: 10px;
-  position: relative;
-  top: -1px;                  /* jemne vyššie, aby nevybiehal */
-}
-
-header.cae-header .main-nav ul.nav > li:last-child a i {
-  width: 30px;
-  height: 30px;
-  line-height: 36px;
-  font-size: 13px;
-}
-
-header.cae-header .main-nav ul.nav > li:last-child a i {
-  margin-left: 3px; /* skús 6px */
-}
-
-/* CAE: skrátiť čierny pill (CTA) */
-header.cae-header .main-nav ul.nav > li:last-child a {
-  padding-right: 12px;  /* zmenši, napr. 8–12px */
-}
-
-/* CAE: alternatívny pás sekcie (jemné oddelenie) */
-.cae-section-alt {
-  background: #f7f7f7;
-  padding: 80px 0; /* ak chceš menej, daj 70px */
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-/* CAE: jednoduché karty v sekcii */
-.cae-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-}
-
-
-
-
-.cae-form-card {
-  margin-top: 16px;
-  background: #fff;
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-}
-
-.cae-form-hint { margin-top: 6px; margin-bottom: 14px; }
-
-.cae-form-row { margin-bottom: 12px; }
-.cae-form-row label { display: block; margin-bottom: 6px; font-weight: 600; }
-
-.cae-form input {
-  width: 100%;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 12px;
-  padding: 12px 12px;
-  outline: none;
-}
-
-.cae-form input:focus {
-  border-color: rgba(243, 85, 37, 0.6); /* CAE orange */
-  box-shadow: 0 0 0 3px rgba(243, 85, 37, 0.15);
-}
-
-.cae-btn {
-  width: 100%;
-  border: 0;
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-weight: 700;
-  background: #f35525;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: var(--cae-primary);
   color: #fff;
+  font-weight: 700;
+  transition: .2s;
 }
+.cae-btn:hover { color: #fff; transform: translateY(-1px); filter: brightness(.96); }
+.cae-btn-ghost { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(6px); }
+.cae-btn-ghost:hover { background: rgba(255,255,255,.18); }
+.cae-btn-small { padding: 10px 14px; border-radius: 12px; }
+.cae-btn-full { width: 100%; }
 
-.cae-form-msg { margin-top: 10px; font-weight: 600; }
-.cae-form-msg.ok { color: #1a7f37; }
-.cae-form-msg.err { color: #b42318; }
-
-
-/* CONTACT: jemné doladenie rozostupov a zarovnania (izolované len pre #contact) */
-#contact .section-heading {
-  margin-bottom: 10px; /* menej miesta medzi nadpisom a boxom */
-}
-
-/* viac priestoru medzi ľavým a pravým stĺpcom */
-#contact .row.g-4 {
-  --bs-gutter-x: 3rem;  /* horizontálne (medzi stĺpcami) */
-  --bs-gutter-y: 2rem;  /* vertikálne (na menších šírkach) */
-}
-
-/* CONTACT – heading cez celú šírku + menšia medzera pod ním */
-#contact .section-heading {
-  margin-bottom: 22px; /* pôvodne 70px z template */
-}
-
-/* pravý stĺpec: mapa hore, FAQ dole */
-#contact .cae-contact-right {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* pružná medzera medzi mapou a FAQ (minimálne nech to “nedrží nalepené”) */
-#contact .cae-contact-spacer {
-  flex: 1;
-  min-height: 16px;
-}
-
-/* zruš mt-4 efekt, keďže spacing rieši spacer */
-#contact .cae-faq {
-  margin-top: 0;
-}
-
-
-/* FAQ sa „pritlačí“ na spodok pravého stĺpca */
-#contact .cae-faq {
-  margin-top: auto !important; /* prepíše mt-4 */
-}
-
-
-/*--------------------------------------------------------------------- */
-
-
-
-/* CONTACT: doladenie rozostupov a zarovnania (len #contact) */
-#contact .section-heading {
-  margin-bottom: 8px !important;
-  /* menšia medzera medzi nadpisom a boxom */
-}
-
-#contact .section-heading h2 {
-  margin-bottom: 0 !important;
-}
-
-/* viac priestoru medzi ľavým a pravým stĺpcom */
-#contact .row.g-4 {
-  --bs-gutter-x: 3.5rem;
-  --bs-gutter-y: 2rem;
-}
-
-/* pravý stĺpec ako flex, aby FAQ vedelo ísť na spodok */
-#contact .row.align-items-stretch>.col-lg-6:last-child {
-  display: flex;
-  flex-direction: column;
-}
-
-/* na desktope posunieme pravý stĺpec dole, aby mapa začínala na úrovni boxu s formulárom */
-@media (min-width: 992px) {
-  #contact .row.align-items-stretch>.col-lg-6:last-child {
-    padding-top: 78px;
-    /* ak treba, doladíme +/− 10px */
-  }
-}
-
-/* mapa menšia, nech pôsobí vyváženejšie */
-#contact .cae-map-card iframe {
-  height: 360px;
-  /* bolo 420px */
-}
-
-/* FAQ pritlačené na spodok */
-#contact .cae-faq {
-  margin-top: auto !important;
-}
-
-
-/* CONTACT layout fix (bez zásahu do iných sekcií) */
-#contact .section-heading {
-  margin-bottom: 22px;
-}
-
-#contact .cae-contact-right {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-#contact .cae-map-card iframe {
-  width: 100%;
-  height: 360px;
-  border: 0;
-  display: block;
-}
-
-/* medzera medzi mapou a FAQ: na mobile normálna, na desktope “pružná” aby FAQ sedelo dole */
-#contact .cae-right-spacer {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  #contact .cae-right-spacer {
-    display: block;
-    flex: 1;
-    min-height: 18px;
-  }
-}
-
-/* CONTACT: posuň sekciu vyššie (zmenší veľkú medzeru nad ňou) */
-#contact.section {
-  padding-top: 50px;   /* skús 50, ak stále veľa tak 30 */
-  margin-top: 0;
-}
-
-#contact .section-heading {
-  margin-bottom: 14px;   /* bolo 22px */
-}
-
-
-/* CONTACT: pravý stĺpec (mapa+FAQ) posuň vyššie */
-@media (min-width: 992px) {
-  #contact .cae-contact-right {
-    margin-top: -45px; /* skús -30, ak treba viac, daj -40 */
-  }
-}
-
-/* CONTACT: natiahni pole Správa, aby spodok ľavého stĺpca vyšiel zarovno s FAQ */
-@media (min-width: 992px) {
-  #contact textarea[name="message"] {
-    min-height: 295px;  /* skús 260, ak treba viac tak 300 */
-    resize: vertical;   /* nech si to user môže ešte natiahnuť */
-  }
-}
-#contact .cae-form-success {
-  background: #e9f8ef;
-  border: 1px solid #bfe9cd;
-  padding: 12px 14px;
-  border-radius: 10px;
+.cae-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.cae-trust-item {
+  background: rgba(11,27,43,.55);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 14px;
   font-weight: 600;
 }
+.cae-trust-item i { color: var(--cae-primary); margin-right: 8px; }
 
-#contact .cae-form-error {
-  background: #fdecec;
-  border: 1px solid #f3b9b9;
+/* ==========================================================================
+   Content blocks
+   ========================================================================== */
+.cae-lead { font-size: 16px; line-height: 1.8; color: #445466; }
+.cae-subtitle { margin-top: 8px; color: #5a6b7c; }
+
+.cae-card { background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 18px 50px rgba(11,27,43,.08); border: 1px solid rgba(11,27,43,.06); }
+.cae-card-media { position: relative; }
+.cae-card-media img { width: 100%; height: auto; display: block; }
+.cae-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(11,27,43,.08);
+  border-radius: 18px;
   padding: 12px 14px;
-  border-radius: 10px;
-  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(11,27,43,.12);
+}
+.cae-badge-big { font-size: 26px; font-weight: 900; color: var(--cae-dark); }
+.cae-badge-text { font-size: 12px; line-height: 1.2; color: #516070; }
+
+.cae-checklist { margin-top: 18px; display: grid; gap: 10px; }
+.cae-check { display: flex; gap: 10px; align-items: flex-start; color: #3a4a5a; font-weight: 600; }
+.cae-check i { color: var(--cae-primary); margin-top: 2px; }
+.cae-mini-note { margin-top: 18px; background: rgba(0,163,255,.08); border: 1px solid rgba(0,163,255,.18); padding: 14px 16px; border-radius: 16px; color: #24506d; }
+
+.cae-service { background: #fff; border-radius: 22px; padding: 22px; height: 100%; box-shadow: 0 18px 50px rgba(11,27,43,.06); border: 1px solid rgba(11,27,43,.06); transition: .2s; }
+.cae-service:hover { transform: translateY(-3px); box-shadow: 0 22px 65px rgba(11,27,43,.1); }
+.cae-service-icon { width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0,163,255,.12); color: var(--cae-primary); font-size: 22px; margin-bottom: 14px; }
+.cae-service h4 { margin-bottom: 10px; }
+.cae-service p { color: #56677a; line-height: 1.7; }
+.cae-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-weight: 800; color: var(--cae-dark); }
+.cae-link i { color: var(--cae-primary); }
+.cae-link:hover { color: var(--cae-primary); }
+
+.cae-info-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; background: #fff; border-radius: 22px; padding: 16px; border: 1px solid rgba(11,27,43,.06); box-shadow: 0 18px 50px rgba(11,27,43,.05); }
+.cae-info-strip > div { display: flex; gap: 10px; align-items: center; justify-content: center; padding: 10px; border-radius: 16px; background: rgba(11,27,43,.03); font-weight: 800; color: #2a3a4a; text-align: center; }
+.cae-info-strip i { color: var(--cae-primary); }
+
+.cae-price-card { background: #fff; border-radius: 22px; padding: 22px; height: 100%; border: 1px solid rgba(11,27,43,.06); box-shadow: 0 18px 50px rgba(11,27,43,.06); position: relative; overflow: hidden; }
+.cae-price-featured { border: 1px solid rgba(0,163,255,.35); box-shadow: 0 22px 70px rgba(0,163,255,.12); }
+.cae-ribbon { position: absolute; right: -42px; top: 18px; transform: rotate(35deg); background: var(--cae-primary); color: #fff; font-weight: 900; padding: 8px 52px; font-size: 12px; }
+.cae-price-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+.cae-price { font-weight: 900; color: #3a4a5a; }
+.cae-price span { color: var(--cae-dark); font-size: 26px; }
+.cae-price-list { margin: 14px 0 18px 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.cae-price-list li { display: flex; gap: 10px; align-items: flex-start; color: #56677a; }
+.cae-price-list li:before { content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900; color: var(--cae-primary); margin-top: 1px; }
+
+.cae-gallery-item { display: block; position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(11,27,43,.06); box-shadow: 0 14px 40px rgba(11,27,43,.06); }
+.cae-gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform .25s; }
+.cae-gallery-item:hover img { transform: scale(1.04); }
+.cae-gallery-label { position: absolute; left: 12px; bottom: 12px; background: rgba(11,27,43,.7); color: #fff; padding: 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; border: 1px solid rgba(255,255,255,.16); }
+
+/* Contact */
+.cae-contact-card { background: #fff; border-radius: 22px; padding: 22px; border: 1px solid rgba(11,27,43,.06); box-shadow: 0 18px 50px rgba(11,27,43,.06); }
+.cae-contact-mini { display: flex; gap: 12px; align-items: center; background: rgba(11,27,43,.03); border: 1px solid rgba(11,27,43,.06); border-radius: 18px; padding: 14px; height: 100%; }
+.cae-contact-mini .icon { width: 42px; height: 42px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: rgba(0,163,255,.12); color: var(--cae-primary); }
+.cae-contact-mini .label { font-size: 12px; font-weight: 900; color: #607284; text-transform: uppercase; letter-spacing: .6px; }
+.cae-contact-mini a, .cae-contact-mini span { font-weight: 800; color: var(--cae-dark); }
+
+.cae-form label { font-size: 12px; font-weight: 900; color: #607284; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 6px; }
+.cae-form input, .cae-form textarea { width: 100%; border-radius: 16px; padding: 12px 14px; border: 1px solid rgba(11,27,43,.10); background: #fff; font-weight: 600; color: var(--cae-text); }
+.cae-form input:focus, .cae-form textarea:focus { outline: none; border-color: rgba(0,163,255,.6); box-shadow: 0 0 0 4px rgba(0,163,255,.12); }
+.cae-form-note { margin-top: 10px; color: #6a7b8c; font-size: 12px; }
+.cae-form-success { background: #e9f8ef; border: 1px solid #bfe9cd; padding: 12px 14px; border-radius: 10px; font-weight: 600; }
+.cae-form-error { background: #fdecec; border: 1px solid #f3b9b9; padding: 12px 14px; border-radius: 10px; font-weight: 600; }
+
+.cae-contact-right { display: flex; flex-direction: column; height: 100%; }
+.cae-map-card { background: #fff; border-radius: 22px; overflow: hidden; border: 1px solid rgba(11,27,43,.06); box-shadow: 0 18px 50px rgba(11,27,43,.06); }
+.cae-map-card iframe { width: 100%; height: 360px; display: block; border: 0; }
+.cae-map-note { padding: 14px 16px; color: #607284; font-size: 13px; }
+.cae-right-spacer { display: none; }
+
+.cae-faq { background: rgba(11,27,43,.02); border: 1px solid rgba(11,27,43,.06); border-radius: 22px; padding: 18px; margin-top: 16px; }
+.cae-faq h4 { margin-bottom: 12px; }
+.cae-faq .accordion-item { border: 0; margin-bottom: 10px; border-radius: 16px; overflow: hidden; }
+.cae-faq .accordion-button { font-weight: 900; }
+
+/* Footer */
+.cae-footer { background: var(--cae-dark); color: #dbe9f6; padding: 36px 0; }
+.cae-footer-brand { font-size: 18px; font-weight: 900; letter-spacing: .4px; }
+.cae-footer-brand span { color: var(--cae-primary); }
+.cae-footer-note { opacity: .85; margin-top: 4px; }
+.cae-footer-links { display: flex; gap: 14px; justify-content: flex-end; flex-wrap: wrap; }
+.cae-footer-links a { color: #dbe9f6; font-weight: 800; opacity: .9; }
+.cae-footer-links a:hover { color: #fff; opacity: 1; }
+.cae-footer-copy { margin-top: 8px; opacity: .75; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .cae-info-strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* Template hero is very padded on smaller screens */
+  .main-banner .item { padding: 180px 10% 240px 10% !important; }
+  .main-banner .owl-nav { display: none; }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------
-*/
-
-
-/* responsive tweaks */
-@media (max-width: 991px){
-  .cae-info-strip{grid-template-columns:repeat(2,1fr);} 
-}
-@media (max-width: 575px){
-  .cae-section{padding:70px 0;} 
-  .cae-gallery-item img{height:170px;}
-  .cae-info-strip{grid-template-columns:1fr;} 
-  .cae-footer-links{justify-content:flex-start;}
-}
-
-/*
----------------------------------------------------------------------------------------
--- PETOVE UPRAVY
----------------------------------------------------------------------------------------
-*/
-
-
-
-/* =========================================================
-   RESPONSIVE HEADER – drž desktop menu do 768px
-   (override šablóny, aby sa to nelámalo pri < 992px)
-   ========================================================= */
-
-@media (max-width: 991px) and (min-width: 768px) {
-  /* vypni mobile trigger (hamburger) ak ho šablóna zapína */
-  .header-area .main-nav .menu-trigger,
-  .background-header .main-nav .menu-trigger {
-    display: none !important;
-  }
-
-  /* nav nech ostane v jednom riadku */
-  .header-area .main-nav .nav,
-  .background-header .main-nav .nav {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    gap: 6px; /* jemné rozostupy */
-  }
-
-  /* trochu zmenši položky menu */
-  .header-area .main-nav .nav li a,
-  .background-header .main-nav .nav li a {
-    padding: 0 10px !important;
-    font-size: 15px !important;
-    white-space: nowrap;
-  }
-
-  /* logo nech nezaberá zbytočne veľa */
-  .header-area .main-nav .logo,
-  .background-header .main-nav .logo {
-    margin-right: 10px;
-    white-space: nowrap;
-  }
-
-  /* objednať button nech je kompaktnejší */
-  .header-area .main-nav .main-button a,
-  .background-header .main-nav .main-button a {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 14px 0 52px !important; /* miesto pre ikonku */
-    white-space: nowrap;
-  }
-
-  /* oranžový kruh (ikonka) mierne menší + odsadený */
-  .header-area .main-nav .main-button a i,
-  .background-header .main-nav .main-button a i {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    left: 6px;
-    top: 3px;
-  }
-}
-
-/* =========================================================
-   HEADER – responsive fix (single source of truth)
-   Cieľ:
-   - Desktop/tablet: menu v jednom riadku, CTA sa zmestí
-   - Úzke tablety: CTA sa zmení na obyčajný textový link
-   - Mobil: iba hamburger + rozbaľovacie menu (template správanie)
-   ========================================================= */
-
-html, body { overflow-x: hidden; }
-
-/* Zruš template margin-top pre menu iba na našom headeri */
-header.cae-header .main-nav ul.nav { margin-top: 0 !important; }
-
-/* CTA bez ikonky: template má padding-left:0, tak ho vrátime */
-@media (min-width: 768px) {
-  header.cae-header .main-nav .nav li:last-child a {
-    padding-left: 18px !important;   /* keďže sme vyhodili <i> */
-    padding-right: 18px !important;
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-  }
-}
-
-/* Tablet: zmenši spacing, aby sa “Objednať” nestrácalo (cca 1029 → 820) */
-@media (max-width: 991.98px) and (min-width: 768px) {
-  header.cae-header .main-nav .nav li { padding-left: 6px; padding-right: 6px; }
-  header.cae-header .main-nav .nav li a {
-    padding-left: 12px;
-    padding-right: 12px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-}
-
-/* Úzke tablety: CTA už nebude pill, ale obyčajný link ako ostatné */
-@media (max-width: 860px) and (min-width: 768px) {
-  header.cae-header .main-nav .nav li:last-child a {
-    background: transparent !important;
-    color: #1e1e1e !important;
-    font-weight: 500 !important;
-    border-radius: 0 !important;
-    padding: 0 12px !important;
-    height: 40px;
-    line-height: 40px;
-  }
-  header.cae-header .main-nav .nav li:last-child:hover a {
-    color: #f35525 !important;
-  }
-}
-
-
-
-
-@media (max-width: 860px) and (min-width: 768px) {
-  header.cae-header .main-nav .nav li:last-child a {
-    background: transparent !important;
-    color: #1e1e1e !important;
-    font-weight: 500 !important;
-    border-radius: 0 !important;
-    padding: 0 12px !important;
-    height: 40px;
-    line-height: 40px;
-  }
-  header.cae-header .main-nav .nav li:last-child:hover a {
-    color: #f35525 !important;
-  }
-}
-
-
-
-/*
----------------------------------------------------------------------------------------
--- 
----------------------------------------------------------------------------------------
-*/
-
-
-/* ===== MOBILE NAV (jediný zdroj pravdy) ===== */
 @media (max-width: 767.98px) {
+  /* Mobile header height + logo */
+  header.cae-header { height: 80px; }
+  header.cae-header .main-nav { height: 80px; }
+  header.cae-header .logo h1 { font-size: 22px; line-height: 80px !important; }
+
+  /* CSS-driven dropdown (JS toggles `header.cae-header.menu-open`) */
   header.cae-header { position: relative; z-index: 9999; }
   header.cae-header .main-nav { overflow: visible !important; }
 
-  /* default: menu je zavreté */
-  header.cae-header .main-nav ul.nav{
-    display: none;                 /* <- toto zabráni bielemu prekrytiu na #home */
+  header.cae-header .main-nav ul.nav {
+    display: none !important;
     position: absolute !important;
-    left: 0; right: 0; top: 100%;
+    left: 0;
+    right: 0;
+    top: 100%;
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
@@ -605,112 +264,78 @@ header.cae-header .main-nav ul.nav { margin-top: 0 !important; }
     z-index: 99999;
   }
 
-  /* otvorené menu iba keď header má triedu menu-open */
-  header.cae-header.menu-open .main-nav ul.nav{
-    display: block;
+  header.cae-header.menu-open .main-nav ul.nav {
+    display: block !important;
   }
 
-  /* všetky položky rovnaké (Domov..Galéria..Objednať) */
-  header.cae-header .main-nav ul.nav li a{
+  /* Template hides last menu item on mobile; keep "Objednať" visible */
+  header.cae-header .main-nav ul.nav > li:last-child {
     display: block !important;
+  }
+
+  header.cae-header .main-nav ul.nav > li {
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.06);
+  }
+
+  header.cae-header .main-nav ul.nav > li > a {
+    display: block !important;
+    height: auto;
+    line-height: normal;
     padding: 15px 18px !important;
     font-size: 15px !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     text-align: left !important;
     background: #fff !important;
     color: #1e1e1e !important;
   }
 
-  /* Objednať = normálny link (nie pill button) */
-  header.cae-header .main-nav ul.nav li a.cae-cta{
+  /* CTA becomes a normal link in dropdown */
+  header.cae-header .main-nav ul.nav > li > a.cae-cta {
     background: #fff !important;
     color: #1e1e1e !important;
     border-radius: 0 !important;
-    margin: 0 !important;
-    box-shadow: none !important;
+    padding: 15px 18px !important;
   }
+  header.cae-header .main-nav ul.nav > li > a.cae-cta i { display: none !important; }
 
-  header.cae-header .main-nav ul.nav li a.cae-cta i{
-    display: none !important;
-  }
+  /* Hero sizing on mobile */
+  .main-banner .item { padding: 140px 6% 190px 6% !important; }
+  .main-banner .item h2 { font-size: 40px !important; line-height: 1.15 !important; width: 100% !important; }
+  .cae-hero .header-text h2 small { font-size: 16px; }
 }
 
-
-@media (max-width: 767.98px) {
-  /* vynúť, aby "Objednať" nikdy nezmizlo */
-  header.cae-header .main-nav ul.nav > li:last-child{
-    display: list-item !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  header.cae-header .main-nav ul.nav > li:last-child > a{
-    display: block !important;
-  }
+@media (min-width: 992px) {
+  /* Use spacer so FAQ can sit at the bottom */
+  .cae-right-spacer { display: block; flex: 1; min-height: 18px; }
+  .cae-contact-right .cae-faq { margin-top: auto; }
 }
 
-@media (max-width: 767.98px) {
-  header.cae-header .main-nav ul.nav {
-    display: none !important;
-  }
-  header.cae-header.menu-open .main-nav ul.nav {
-    display: block !important;
-  }
-}
-
-@media (max-width: 767.98px) {
-  header.cae-header .main-nav ul.nav {
-    display: none !important;
-  }
-  header.cae-header.menu-open .main-nav ul.nav {
-    display: block !important;
-  }
-}
-
-/* ===== TABLET (768–991): desktop štýl, bez hamburgera, CTA ako normálny link ===== */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  /* Keep tablet as "desktop nav" – no hamburger */
+  header.cae-header .menu-trigger { display: none !important; }
+  header.cae-header .main-nav ul.nav { display: flex !important; flex-wrap: nowrap; }
 
-  /* hamburger preč */
-  header.cae-header .menu-trigger { 
-    display: none !important; 
-  }
+  header.cae-header .main-nav ul.nav > li > a { padding: 0 10px; font-size: 14px; white-space: nowrap; }
 
-  /* nav musí byť vždy viditeľný a v jednej línii */
-  header.cae-header .main-nav ul.nav{
-    display: flex !important;
-    position: static !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 0 !important;
-    margin: 0 !important;
-  }
-
-  header.cae-header .main-nav ul.nav > li{
-    display: flex;
-    align-items: center;
-    height: auto;
-  }
-
-  /* položky trochu zmenši, nech sa zmestia */
-  header.cae-header .main-nav ul.nav > li > a{
-    padding: 0 10px !important;
-    font-size: 14px !important;
-    white-space: nowrap !important;
-  }
-
-  /* Objednať: rovnaký štýl ako ostatné odkazy (žiadny pill) */
-  header.cae-header .main-nav ul.nav > li > a.cae-cta{
+  /* Save space: CTA looks like a normal link on tablet */
+  header.cae-header .main-nav ul.nav > li > a.cae-cta {
     background: transparent !important;
     color: inherit !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
     padding: 0 10px !important;
     font-weight: 600 !important;
   }
+  header.cae-header .main-nav ul.nav > li > a.cae-cta i { display: none !important; }
+}
 
-  /* ikonku môžeš na tablete schovať, nech to neuberá miesto */
-  header.cae-header .main-nav ul.nav > li > a.cae-cta i{
-    display: none !important;
-  }
+@media (max-width: 575.98px) {
+  .cae-section.section { padding: 70px 0; }
+  .cae-gallery-item img { height: 170px; }
+  .cae-info-strip { grid-template-columns: 1fr; }
+  .cae-footer-links { justify-content: flex-start; }
+
+  /* Easier taps in hero */
+  .cae-hero-actions { gap: 10px; }
+  .cae-hero-actions .cae-btn { width: 100%; }
+  .main-banner .item h2 { font-size: 34px !important; }
 }
