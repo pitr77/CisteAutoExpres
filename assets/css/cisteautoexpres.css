@@ -1469,3 +1469,22 @@ header.cae-header .main-nav ul.nav > li > a.cae-cta i{
     line-height: 40px !important;
   }
 }
+
+/* ===== PETO/RESPONSIVE: HERO MOBILE WIDTH (max-width: 575.98px) ===== */
+
+
+@media (max-width: 575.98px) {
+  /* viac šírky pre celý hero obsah */
+  .main-banner .item{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+ 
+  /* a ak by mal header-text ešte vlastné odsadenie */
+  .cae-hero .header-text{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
