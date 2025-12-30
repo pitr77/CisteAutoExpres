@@ -1535,8 +1535,8 @@ header.cae-header .cae-logo-bg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 100px;
-  opacity: 0.35;
+  max-width: 80px;
+  opacity: 0.40;
   pointer-events: none;
   z-index: 0;
 }
