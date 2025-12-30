@@ -1545,3 +1545,8 @@ header.cae-header .cae-logo-text {
   position: relative;
   z-index: 1;
 }
+
+/* sticky / scrolled stav */
+header.cae-header.background-header .cae-logo-bg {
+  max-width: 60px;
+}
