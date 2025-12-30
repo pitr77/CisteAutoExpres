@@ -51,7 +51,52 @@ JS fake submit je v assets/js/cisteautoexpres.js (handler na #caeJobsForm).
 Zarovnanie: v #spolupraca je row zarovnaný na align-items-start (alebo CSS override).
 
 Prosím nemenť globálne template triedy, ideálne držať CAE úpravy v .cae-* alebo v scope header.cae-header.
+--------------------------------------------------------------------------------
 
-KAMIL 25.12 21:21
+KAMIL 30.12 11:21
 
-V galérii som prerobil sekciu „Ukážky pred / po“ tak, aby každý galériový box obsahoval dve samostatné fotky vedľa seba
+Urobil som lokálne brandingové úpravy bez zásahu do layoutu alebo JS logiky:
+
+Header – logo
+
+Nahradené pôvodné textové logo za kombináciu:
+
+textové logo RastyGarage
+
+JPG logo ako watermark za textom
+
+Riešené čisto cez externé CSS (.cae-logo, .cae-logo-bg, .cae-logo-text)
+
+Scoped len na header.cae-header, bez zásahu do globálnych tried
+
+Sticky header, scroll aj mobile menu zostávajú nedotknuté
+
+Branding texty
+
+Upravené názvy z Rusty Garage → Rasty Garage
+
+Úpravy v <title>, hero sekcii, footeri a drobných textoch
+
+Iba textové zmeny (žiadna zmena štruktúry HTML)
+
+Galéria (Pred / Po)
+
+Galéria prerobená tak, že každý box obsahuje 2 obrázky vedľa seba:
+
+ľavý = Pred
+
+pravý = Po
+
+Použitý Bootstrap grid (row + col-6)
+
+.cae-gallery-item je striktne len na <a> (kvôli overlay labelom)
+
+Bez nových globálnych CSS pravidiel
+
+Dôležité:
+
+Nezasahoval som do sekcie Kontakt, Spolupráca, ani do Formspree / FAQ JS.
+
+Žiadne globálne Bootstrap class neboli menené.
+
+Všetky nové štýly sú pod .cae-* a/alebo scoped na header.

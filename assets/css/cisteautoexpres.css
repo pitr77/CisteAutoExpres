@@ -1522,3 +1522,31 @@ header.cae-header .main-nav ul.nav > li > a.cae-cta i{
     max-width: calc(100% - 40px);
   }
 }
+
+/* ===== HEADER LOGO (watermark) KAMILOVA UPRAVA ===== */
+
+header.cae-header .cae-logo {
+  position: relative;
+  display: inline-block;
+}
+
+header.cae-header .cae-logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80px;
+  opacity: 0.40;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header.cae-header .cae-logo-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* sticky / scrolled stav */
+header.cae-header.background-header .cae-logo-bg {
+  max-width: 60px;
+}
